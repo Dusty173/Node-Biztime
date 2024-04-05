@@ -1,9 +1,12 @@
 const express = require("express");
-const router = new express.Router();
+const db = require('../db');
+const ExpressError = require("../expressError");
+
+let router = new express.Router();
 
 
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res, next) => {
     
 })
 
