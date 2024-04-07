@@ -16,7 +16,7 @@ describe('GET /companies', () => {
     test('Get company by code', async () => {
         const res = await request(app).get('/companies/apple')
         expect(res.statusCode).toBe(200)
-        expect(res.body).toEqual({company : 'Apple Computer'})
+        expect(res.body).toEqual({'company' : 'Apple Computer'})
     })
     test('Get 404 if invalid code', async () => {
         const res = await request(app).get('/companies/notacode')
@@ -42,6 +42,6 @@ describe('DELETE /companies/:code', () => {
     test('Deletes company', async () => {
         const res = await request(app).delete('/companies/newComp')
         expect(res.statusCode).toBe(200)
-        expect(res.body).toEqual({status: 'deleted'})
+        expect(res.body).toEqual({'status': 'deleted'})
     })
 });

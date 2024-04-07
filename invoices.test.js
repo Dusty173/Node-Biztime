@@ -40,6 +40,6 @@ describe('DELETE /invoices/:id', () => {
     test('Deletes invoice', async () => {
         const res = await request(app).delete('/invoices/5')
         expect(res.statusCode).toBe(200)
-        expect(res.body).toEqual({status: 'deleted'})
+        expect(res.body).toEqual({'status': 'deleted'})
     })
 });
