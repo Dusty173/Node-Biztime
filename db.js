@@ -5,15 +5,15 @@ const { Client } = require("pg");
 let DB_URI;
 
 if(process.env.NODE_ENV === 'test'){
-    DB_URI = "postgresql:///biztime_test";
+    DB_URI = "postgresql:///testbizdb";
 } else {
     DB_URI = "postgresql:///biztime";
 }
 
-let db = new Client({
+let client = new Client({
     connectionString: DB_URI
 });
 
-db.connect();
+client.connect();
 
-module.exports = db;
+module.exports = client;
